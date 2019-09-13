@@ -27,3 +27,24 @@ body {
     background-color: aliceblue;
     opacity: .6;
 }
+
+
+#underscores {
+    text-align: center;
+    font-size: 72px;
+    margin: 0 auto;
+}
+
+#TopRow, #MidRow, #LowRow {
+    margin: 0 auto;
+    text-align: center;
+}
+button {
+    text-align: center;
+    font-size: 72px;
+    background-color: lightblue;
+    border: solid gray 1px;
+    width: 80px;
+    margin: 2px;
+    
+}
