@@ -51,7 +51,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                <p id="underscores">_ _ _ _ _ _</p>
+                <p id="underscores"></p>
                 </div>
             </div>
             <div class="row">
@@ -90,12 +90,24 @@ window.onload = function(){
  var TopArr = ["Q","W","E","R","T","Y","U","I","O","P"];
  var MidArr = ["A","S","D","F","G","H","J","K","L"];
  var LowArr = ["Z","X","C","V","B","N","M"];
+ var EmptyArr = [];
  var WordArr = ["PRINCESS", "MALEFICENT", "CINDERELLA"];
  var wordholder = document.getElementById("underscores");
  correct = document.createElement("ul");
 
+//function to randomly generate Word//
 function WordGenerator () {
     var SelectedWord = WordArr[Math.floor(Math.random()* WordArr.length)];
+    for (i = 0; i < SelectedWord.length; i++) {
+        EmptyArr[i] = '_';
+    }
+    document.getElementById("underscores").innerHTML = EmptyArr.join(" ");
+
+}
+
+//Compare button to word selected
+
+function CompareWord() {
     
 }
 //Create the buttons to  press//
@@ -123,7 +135,7 @@ function WordGenerator () {
 
  letterButtons.forEach(function(btn){
     btn.addEventListener("click", function(){
-         alert(btn.nodeValue);
+         WordGenerator();
      });
  });
 
