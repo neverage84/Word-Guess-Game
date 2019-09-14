@@ -28,14 +28,14 @@
    <style>
    #underscores {
        text-align: center;
-       font-size: 72px;
+       font-size: 84px;
        margin: 0 auto;
    }
    </style>
     <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container">
         <img class="Disney" src="assets/images/Screen Shot 2019-09-12 at 6.39.38 PM.png" width="300px" height="100%">
-        <img class="Word_Game" src="assets/images/Screen Shot 2019-09-11 at 4.15.43 PM.png" width="400px" height="100px">
+        <img class="Word_Game" src="assets/images/Screen Shot 2019-09-12 at 8.44.32 PM.png" width="450px" height="100px">
         </div>
     </nav>
 
@@ -74,7 +74,7 @@
     </div>
 </div>
 
-<audio controls autoplay>
+<audio autoplay>
         <source src="assets/javascript/MainStreetElectricalParade.mp3" type="audio/mpeg">
        
        </audio>
@@ -82,12 +82,23 @@
        
 
 <script  type='text/javascript'>
+
+
+
 window.onload = function(){
 
  var TopArr = ["Q","W","E","R","T","Y","U","I","O","P"];
  var MidArr = ["A","S","D","F","G","H","J","K","L"];
  var LowArr = ["Z","X","C","V","B","N","M"];
- var arr = ["PRINCESS", "MALEFICENT", "CINDERELLA"];
+ var WordArr = ["PRINCESS", "MALEFICENT", "CINDERELLA"];
+ var wordholder = document.getElementById("underscores");
+ correct = document.createElement("ul");
+
+function WordGenerator () {
+    var SelectedWord = WordArr[Math.floor(Math.random()* WordArr.length)];
+    
+}
+//Create the buttons to  press//
  
  for (var i = 0;  i < TopArr.length; i++){
      var Btn = document.createElement("BUTTON");
@@ -112,7 +123,7 @@ window.onload = function(){
 
  letterButtons.forEach(function(btn){
     btn.addEventListener("click", function(){
-         alert("Click");
+         alert(btn.nodeValue);
      });
  });
 
