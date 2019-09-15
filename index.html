@@ -44,7 +44,7 @@
         <div class="Wrapper">
             <div class="row">
                 <div class="col-5">
-                    <p>Press any button to get started!</p>
+                    <p>Click any letter below to get started!</p>
                     <p id=GuessesLeft></p>
                 </div>
 
@@ -108,24 +108,28 @@ function WordGenerator () {
 //Compare button to word selected
 
 function CompareWord() {
-    
+    var key = btn.getAttribute("btnData");
 }
 //Create the buttons to  press//
  
  for (var i = 0;  i < TopArr.length; i++){
      var Btn = document.createElement("BUTTON");
+     Btn.setAttribute("btnData",TopArr[i]);
      Btn.classList.add("letter-btn");
      Btn.innerHTML = TopArr[i];
      document.getElementById("TopRow").appendChild(Btn);
+
  }
  for (var i = 0;  i < MidArr.length; i++){
      var Btn = document.createElement("BUTTON");
+     Btn.setAttribute("btnData",MidArr[i]);
      Btn.classList.add("letter-btn");
      Btn.innerHTML = MidArr[i];
      document.getElementById("MidRow").appendChild(Btn);
  }
  for (var i = 0;  i < LowArr.length; i++){
      var Btn = document.createElement("BUTTON");
+     Btn.setAttribute("btnData",LowArr[i]);
      Btn.innerHTML = LowArr[i];
      Btn.classList.add("letter-btn");
      document.getElementById("LowRow").appendChild(Btn);
@@ -134,10 +138,13 @@ function CompareWord() {
  var letterButtons = Array.from(document.querySelectorAll(".letter-btn"));
 
  letterButtons.forEach(function(btn){
+     
     btn.addEventListener("click", function(){
          WordGenerator();
+         console.log(btn.getAttribute("btnData"));
      });
  });
+
 
 }
 
