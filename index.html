@@ -101,15 +101,15 @@ function WordGenerator () {
 }
 //Compare button to word selected
 function CompareWord(str) {
-    var count = 0;
+    
     for (var i = 0; i < str.length; i++){
         if (key.indexOf(str[i]) !== -1) {
             EmptyArr[i] = str[i];
             document.getElementById("underscores").innerHTML = EmptyArr.join(" ");
-            
         }
+       
     }
-    console.log(count);
+    
 }
 //Create the buttons to  press//
  
@@ -151,6 +151,8 @@ function CompareWord(str) {
         else {
             key = btn.getAttribute("btnData");
             CompareWord(SelectedWord);
+            Guesses--;
+            document.getElementById("GuessesLeft").innerHTML = "Guesses Left: " + Guesses;
         }
          
 
