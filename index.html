@@ -169,6 +169,10 @@ function Reset() {
                 Wins++;
                 Reset();
             }
+            else if (WinScenario===true && Guesses===0){
+                Losses++;
+                Reset();
+            }
         }
          
 
