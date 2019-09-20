@@ -80,7 +80,7 @@ window.onload = function(){
  var MidArr = ["A","S","D","F","G","H","J","K","L"];
  var LowArr = ["Z","X","C","V","B","N","M"];
  var EmptyArr = [];
- var WordArr = ["PRINCESS","MALEFICENT"];
+ var WordArr = ["PRINCESS", "MALEFICENT", "CINDERELLA", "JASMINE", "DALMATIONS", "JAFAR", "SIMBA"];
  var wordholder = document.getElementById("underscores");
  var Guesses = 11;
  var Wins = 0;
@@ -95,7 +95,7 @@ window.onload = function(){
 //function to randomly generate Word//
 function WordGenerator () {
     EmptyArr = [];
-    SelectedWord = WordArr[Math.floor(Math.random()* WordArr.length)];
+    SelectedWord = WordArr[WordNumber];
     for (i = 0; i < SelectedWord.length; i++) {
         EmptyArr[i] = '_';
     }
@@ -160,6 +160,7 @@ function CompareWord(str) {
             console.log(WinScenario);
             if (WinScenario===false){
                 Wins++;
+                WordNumber++;
                 document.getElementById("GuessesLeft").innerHTML = "Guesses Left: " + Guesses + "<br>" + "Wins: " + Wins + "<br>" + "Losses: " + Losses;
             }
         }
