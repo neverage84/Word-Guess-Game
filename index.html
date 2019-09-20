@@ -89,12 +89,15 @@ window.onload = function(){
  var WordArr = ["PRINCESS", "MALEFICENT", "CINDERELLA"];
  var wordholder = document.getElementById("underscores");
  var Guesses = 10;
+ var SelectedWord = "";
+ var Count = 1;
 
 
  correct = document.createElement("ul");
 //function to randomly generate Word//
 function WordGenerator () {
-    var SelectedWord = WordArr[Math.floor(Math.random()* WordArr.length)];
+    EmptyArr = [];
+    SelectedWord = WordArr[Math.floor(Math.random()* WordArr.length)];
     for (i = 0; i < SelectedWord.length; i++) {
         EmptyArr[i] = '_';
     }
@@ -133,10 +136,13 @@ function CompareWord() {
  letterButtons.forEach(function(btn){
      
     btn.addEventListener("click", function(){
-         WordGenerator(); // < -- I don't think this is correct
+        if (Count === 1) {
+        WordGenerator(); // < -- I don't think this is correct
          // console.log(btn.getAttribute("btnData"));
-         var x = btn.innerHTML;
-        console.log(x);
+         console.log(SelectedWord);
+         Count = 0;
+        }
+         
 
          // check if selected letter is in the word
      });
