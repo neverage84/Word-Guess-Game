@@ -85,6 +85,7 @@ window.onload = function(){
  var Guesses = 11;
  var SelectedWord = "";
  var Count = 1;
+ var key = "";
 
 
  correct = document.createElement("ul");
@@ -96,8 +97,7 @@ function WordGenerator () {
         EmptyArr[i] = '_';
     }
     document.getElementById("underscores").innerHTML = EmptyArr.join(" ");
-    
-    
+       
 }
 //Compare button to word selected
 function CompareWord() {
@@ -127,17 +127,22 @@ function CompareWord() {
      document.getElementById("LowRow").appendChild(Btn);
  }
  var letterButtons = Array.from(document.querySelectorAll(".letter-btn"));
+ 
  letterButtons.forEach(function(btn){
      
     btn.addEventListener("click", function(){
         if (Count === 1) {
         WordGenerator(); // < -- I don't think this is correct
          // console.log(btn.getAttribute("btnData"));
-         console.log(SelectedWord);
+         
          Count = 0;
          Guesses -= 1;
          document.getElementById("GuessesLeft").innerHTML = "Guesses Left: " + Guesses;
-         
+        
+        }
+        else {
+            key = btn.getAttribute("btnData");
+            console.log(key);
         }
          
 
