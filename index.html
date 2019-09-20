@@ -34,8 +34,8 @@
    </style>
     <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container">
-        <img class="Disney" src="assets/images/Screen Shot 2019-09-12 at 6.39.38 PM.png" width="300px" height="100%">
-        <img class="Word_Game" src="assets/images/Screen Shot 2019-09-12 at 8.44.32 PM.png" width="450px" height="100px">
+        <img class="Disney" src="assets/images/walt_disney_PNG37.png" width="300px" height="100%">
+        <a href="https://fontmeme.com/fonts/waltograph-disney-font/"><img src="https://fontmeme.com/permalink/190920/721373fbdfd0eff6564ca5b065349d2a.png" alt="waltograph-disney-font" border="0"></a>
         </div>
     </nav>
 
@@ -82,19 +82,17 @@
        
 
 <script  type='text/javascript'>
-
-
-
 window.onload = function(){
-
  var TopArr = ["Q","W","E","R","T","Y","U","I","O","P"];
  var MidArr = ["A","S","D","F","G","H","J","K","L"];
  var LowArr = ["Z","X","C","V","B","N","M"];
  var EmptyArr = [];
  var WordArr = ["PRINCESS", "MALEFICENT", "CINDERELLA"];
  var wordholder = document.getElementById("underscores");
- correct = document.createElement("ul");
+ var Guesses = 10;
 
+
+ correct = document.createElement("ul");
 //function to randomly generate Word//
 function WordGenerator () {
     var SelectedWord = WordArr[Math.floor(Math.random()* WordArr.length)];
@@ -102,11 +100,10 @@ function WordGenerator () {
         EmptyArr[i] = '_';
     }
     document.getElementById("underscores").innerHTML = EmptyArr.join(" ");
-
+    
+    
 }
-
 //Compare button to word selected
-
 function CompareWord() {
     var key = btn.getAttribute("btnData");
 }
@@ -118,7 +115,6 @@ function CompareWord() {
      Btn.classList.add("letter-btn");
      Btn.innerHTML = TopArr[i];
      document.getElementById("TopRow").appendChild(Btn);
-
  }
  for (var i = 0;  i < MidArr.length; i++){
      var Btn = document.createElement("BUTTON");
@@ -134,23 +130,20 @@ function CompareWord() {
      Btn.classList.add("letter-btn");
      document.getElementById("LowRow").appendChild(Btn);
  }
-
  var letterButtons = Array.from(document.querySelectorAll(".letter-btn"));
-
  letterButtons.forEach(function(btn){
      
     btn.addEventListener("click", function(){
-         WordGenerator();
-         console.log(btn.getAttribute("btnData"));
+         WordGenerator(); // < -- I don't think this is correct
+         // console.log(btn.getAttribute("btnData"));
+         var x = btn.innerHTML;
+        console.log(x);
+
+         // check if selected letter is in the word
      });
  });
-
-
 }
-
-
 </script>
 
 </body>
 </html>
-
