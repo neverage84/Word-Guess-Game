@@ -61,10 +61,18 @@ button {
     text-align: center;
     font-size: 72px;
     background-color: lightgreen;
-    border: solid gray 1px;
+    border: solid gray 2px;
     width: 80px;
     line-height: 80px;
     margin: 2px;
     
     
+}
+
+.letter-btn:hover {
+    background-color: yellow;
+}
+
+.letter-btn:visited {
+    background-color: crimson;
 }
