@@ -29,8 +29,8 @@
     <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container">
         <img class="Disney" src="assets/images/walt_disney_PNG37.png" width="300px" height="100%">
-        <a href="https://fontmeme.com/fonts/waltograph-disney-font/"><img src="https://fontmeme.com/permalink/190920/f419a9e92580feb3f177a3816df7189f.png" alt="waltograph-disney-font" border="0"></a>
-     </nav>
+        <a href="https://fontmeme.com/fonts/waltograph-disney-font/"><img src="https://fontmeme.com/permalink/190920/b55dfee7d45e2d3076cbcfe384d9a0a9.png" alt="waltograph-disney-font" border="0"></a>
+    </nav>
 
 <div class="container">
     <div class="MainContent">
@@ -80,7 +80,7 @@ window.onload = function(){
  var MidArr = ["A","S","D","F","G","H","J","K","L"];
  var LowArr = ["Z","X","C","V","B","N","M"];
  var EmptyArr = [];
- var WordArr = ["PRINCESS", "MALEFICENT", "CINDERELLA"];
+ var WordArr = ["PRINCESS"];
  var wordholder = document.getElementById("underscores");
  var Guesses = 11;
  var SelectedWord = "";
@@ -100,8 +100,14 @@ function WordGenerator () {
        
 }
 //Compare button to word selected
-function CompareWord() {
-    var key = btn.getAttribute("btnData");
+function CompareWord(str) {
+    var count = 0;
+    for (var i = 0; i < str.length; i++){
+        if (key.indexOf(str[i]) !== -1) {
+            count++;
+        }
+    }
+    console.log(count);
 }
 //Create the buttons to  press//
  
@@ -142,7 +148,7 @@ function CompareWord() {
         }
         else {
             key = btn.getAttribute("btnData");
-            console.log(key);
+            CompareWord(SelectedWord);
         }
          
 
