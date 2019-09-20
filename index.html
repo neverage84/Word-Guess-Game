@@ -80,7 +80,7 @@ window.onload = function(){
  var MidArr = ["A","S","D","F","G","H","J","K","L"];
  var LowArr = ["Z","X","C","V","B","N","M"];
  var EmptyArr = [];
- var WordArr = ["PRINCESS"];
+ var WordArr = ["PRINCESS","MALEFICENT"];
  var wordholder = document.getElementById("underscores");
  var Guesses = 11;
  var Wins = 0;
@@ -88,6 +88,7 @@ window.onload = function(){
  var SelectedWord = "";
  var Count = 1;
  var key = "";
+ var WordNumber = 0;
 
 
  correct = document.createElement("ul");
@@ -147,18 +148,19 @@ function CompareWord(str) {
          
          Count = 0;
          Guesses -= 1;
-         document.getElementById("GuessesLeft").innerHTML = "Guesses Left: " + Guesses;
+         document.getElementById("GuessesLeft").innerHTML = "Guesses Left: " + Guesses + "<br>" + "Wins: " + Wins + "<br>" + "Losses: " + Losses;
         
         }
         else {
             key = btn.getAttribute("btnData");
             CompareWord(SelectedWord);
             Guesses--;
-            document.getElementById("GuessesLeft").innerHTML = "Guesses Left: " + Guesses;
+            document.getElementById("GuessesLeft").innerHTML = "Guesses Left: " + Guesses + "<br>" + "Wins: " + Wins + "<br>" + "Losses: " + Losses;
             var WinScenario = EmptyArr.includes("_");
             console.log(WinScenario);
             if (WinScenario===false){
-                console.log("WINNER");
+                Wins++;
+                document.getElementById("GuessesLeft").innerHTML = "Guesses Left: " + Guesses + "<br>" + "Wins: " + Wins + "<br>" + "Losses: " + Losses;
             }
         }
          
