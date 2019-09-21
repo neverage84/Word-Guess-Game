@@ -4,7 +4,7 @@ window.onload = function(){
     var LowArr = ["Z","X","C","V","B","N","M"];
     var EmptyArr = [];
     var WordArr = ["PRINCESS", "MALEFICENT", "CINDERELLA", "JASMINE", "DALMATIONS", "JAFAR", "SIMBA"];
-    var Guesses = 11;
+    var Guesses = 16;
     var Wins = 0;
     var Losses = 0;
     var SelectedWord = "";
@@ -49,7 +49,7 @@ window.onload = function(){
    }
    //Reset function
    function Reset() {
-       Guesses = 10;
+       Guesses = 15;
        WordNumber++;
        WordGenerator();
        
