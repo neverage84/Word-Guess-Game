@@ -118,9 +118,16 @@ function Reset() {
     Guesses = 10;
     WordNumber++;
     WordGenerator();
-    document.getElementById("GuessesLeft").innerHTML = "Guesses Left: " + Guesses + "<br>" + "Wins: " + Wins + "<br>" + "Losses: " + Losses;
+    
+    document.getElementById("GuessesLeft").innerHTML = "Guesses Left: " + Guesses + "<br>" + "Wins: " + Wins + "<br>" + "Losses: " + Losses;    
+    
 }
 
+function GreenButtons (){
+    for (var i = 0; i < 27; i++) {
+        document.getElementsByClassName("letter-btn")[i].style.backgroundColor = "lightgreen";
+    }
+}
 //Create the buttons to  press//
  
  for (var i = 0;  i < TopArr.length; i++){
@@ -165,19 +172,23 @@ function Reset() {
             Guesses--;
             document.getElementById("GuessesLeft").innerHTML = "Guesses Left: " + Guesses + "<br>" + "Wins: " + Wins + "<br>" + "Losses: " + Losses;
             var WinScenario = EmptyArr.includes("_");
-            console.log(WinScenario);
+            
             if (WinScenario===false){
                 Wins++;
+                
                 Reset();
+                GreenButtons();
             }
             else if (WinScenario===true && Guesses===0){
                 Losses++;
+                
                 Reset();
+                GreenButtons();
             }
         }
          
 
-         // check if selected letter is in the word
+         
      });
  });
 }
