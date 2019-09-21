@@ -71,8 +71,11 @@
         <source src="assets/javascript/MainStreetElectricalParade.mp3" type="audio/mpeg">
        
        </audio>
+       <audio id="click" src="assets/images/Ting-Popup_Pixels-349896185.mp3" autoplay="false"> </audio>
 
-       
+       <audio id="win" src="assets/images/Ta Da-SoundBible.com-1884170640.mp3" autoplay="false"> </audio>
+
+       <audio id="lose" src="assets/images/Power Failure-SoundBible.com-1821346166.mp3" autoplay="false"> </audio>
 
 <script  type='text/javascript'>
 window.onload = function(){
@@ -89,7 +92,18 @@ window.onload = function(){
  var key = "";
  var WordNumber = 0;
 
-
+ function ButtonClickSound() {
+        var sound = document.getElementById("click");
+        sound.play();
+    };
+function WinGameSound() {
+        var sound = document.getElementById("win");
+        sound.play();
+    };
+function LoseGameSound() {
+        var sound = document.getElementById("lose");
+        sound.play();
+    };
  
 //function to randomly generate Word//
 function WordGenerator () {
@@ -172,16 +186,17 @@ function GreenButtons (){
             Guesses--;
             document.getElementById("GuessesLeft").innerHTML = "Guesses Left: " + Guesses + "<br>" + "Wins: " + Wins + "<br>" + "Losses: " + Losses;
             var WinScenario = EmptyArr.includes("_");
+            ButtonClickSound();
             
             if (WinScenario===false){
                 Wins++;
-                
+                WinGameSound();
                 Reset();
                 GreenButtons();
             }
             else if (WinScenario===true && Guesses===0){
                 Losses++;
-                
+                LoseGameSound();
                 Reset();
                 GreenButtons();
             }
