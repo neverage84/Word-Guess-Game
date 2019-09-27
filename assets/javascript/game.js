@@ -11,6 +11,7 @@ window.onload = function(){
     var Count = 1;
     var key = "";
     var WordNumber = 0;
+    
    
     function ButtonClickSound() {
            var sound = document.getElementById("click");
@@ -49,14 +50,34 @@ window.onload = function(){
    }
    //Reset function
    function Reset() {
+       if (WordNumber < 2) {
        Guesses = 15;
        WordNumber++;
        WordGenerator();
        
        document.getElementById("GuessesLeft").innerHTML = "Guesses Left: " + Guesses + "<br>" + "Wins: " + Wins + "<br>" + "Losses: " + Losses;    
-       
+       }
+       else {
+           NewGame();
+       }
    }
-   
+//Reset the whole game//
+
+   function NewGame(){
+    
+    alert("Click any button to restart game");
+
+    EmptyArr = [];
+    Guesses = 16;
+    Wins = 0;
+    Losses = 0;
+    SelectedWord = "";
+    Count = 1;
+    key = "";
+    WordNumber = 0;
+    WordGenerator();  
+   }
+   //Buttons back to green buttons on next words.
    function GreenButtons (){
        for (var i = 0; i < 27; i++) {
            document.getElementsByClassName("letter-btn")[i].style.backgroundColor = "lightgreen";
