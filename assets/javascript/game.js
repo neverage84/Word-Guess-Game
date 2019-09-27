@@ -50,7 +50,7 @@ window.onload = function(){
    }
    //Reset function
    function Reset() {
-       if (WordNumber < 2) {
+       if (WordNumber < 6) {
        Guesses = 15;
        WordNumber++;
        WordGenerator();
