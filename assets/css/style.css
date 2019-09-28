@@ -69,10 +69,7 @@ button {
     
 }
 
-.letter-btn:hover {
+button:hover {
     background-color: yellow;
 }
 
-.letter-btn:visited {
-    background-color: crimson;
-}
