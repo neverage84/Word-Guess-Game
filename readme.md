@@ -2,6 +2,8 @@
 
 #Overview
 
+![Alt Text](https://github.com/neverage84/Word-Guess-Game/blob/master/Word%20Guess%20Game.gif?raw=true)
+
 Word guess game that uses key events to listen for the letters that users will click.
 
 Displays the following on the page:
